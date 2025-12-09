@@ -15,13 +15,29 @@ public class savingCalcApplication {
     private TextField numMonths;
 
 
+
+
     @FXML
 
     protected void onHelloButtonClick() {
+
         String getItem = txtItem.getText();
-        double getCost = Double.parseDouble(itemCost.getText());
-        double getMonth = Double.parseDouble(numMonths.getText());
-        double perMonth = getCost / getMonth;
-        calcText.setText("To buy a " + getItem + " you need to save " + "$" + perMonth + " per month ");
+        if (getItem.isEmpty() || itemCost.getText().isEmpty() || numMonths.getText().isEmpty()) {
+            calcText.setText("complete the form dont leave anything blank");
+        }
+        else{
+            itemCost.getText();
+            double getCost = Double.parseDouble(itemCost.getText());
+
+            numMonths.getText();
+            double getMonth = Double.parseDouble(numMonths.getText());
+
+
+
+            double perMonth = getCost / getMonth;
+            calcText.setText("To buy a " + getItem + " you need to save " + "$" + perMonth + " per month ");
+        }
+
     }
+
 }
